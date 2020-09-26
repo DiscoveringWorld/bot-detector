@@ -1,42 +1,40 @@
 import sys
 
-from .ApiRequester import ApiRequester
-from .User import User
-from .BotDescription import BotDescription
-
-followers_api_url = "https://friends.roblox.com/v1/users/{0}/followers"
-friends_api_url = "https://friends.roblox.com"
+from .UserListsHandler import UserListsHandler
 
 def main():
     args = sys.argv[1:]
 
     if args[0] == 'run':
-        if args[2] == 'followers':
-            user_id = args[1]
+        list_handler = UserListsHandler()
 
-            user = User(user_id)
-            requester = ApiRequester()
+        list_handler.handle(args[2], args[1])
 
-            url = followers_api_url.format(user.user_id)
-            user_list = requester.get(url, True, {'limit': 100})
+# user_id = args[1]
 
-            number_of_bots = 0
+# user = User(user_id)
+# requester = ApiRequester()
 
-            for user in followers["data"]:
-                follower_user = User(follower["id"])
+# url = followers_api_url.format(user.user_id)
+# user_list = requester.get(url, True, {'limit': 100})
 
-                users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(follower_user.user_id)
-                user_status_info = requester.get(users_api_url, True, None)
+# number_of_bots = 0
 
-                bot_description = BotDescription()
-                bot_text = bot_description.return_description()
+# for user in followers["data"]:
+#     follower_user = User(follower["id"])
 
-                print("{0}: {1}".format(follower_user.username, user_status_info["status"]))
-                if ',' in user_status_info["status"]:
-                    if user_status_info["status"][:user_status_info["status"].index(',')] in bot_text:
-                        number_of_bots += 1
-                elif '!' in user_status_info["status"]:
-                    if user_status_info["status"][:user_status_info["status"].index('!')] in bot_text:
-                        number_of_bots += 1
+#     users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(follower_user.user_id)
+#     user_status_info = requester.get(users_api_url, True, None)
 
-            print("{0} has {1} bots as a follower.".format(user.username, number_of_bots))
+#     bot_description = BotDescription()
+#     bot_text = bot_description.return_description()
+
+#     print("{0}: {1}".format(follower_user.username, user_status_info["status"]))
+#     if ',' in user_status_info["status"]:
+#         if user_status_info["status"][:user_status_info["status"].index(',')] in bot_text:
+#             number_of_bots += 1
+#     elif '!' in user_status_info["status"]:
+#         if user_status_info["status"][:user_status_info["status"].index('!')] in bot_text:
+#             number_of_bots += 1
+
+# print("{0} has {1} bots as a follower.".format(user.username, number_of_bots))
