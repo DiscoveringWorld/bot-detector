@@ -10,11 +10,14 @@ class UserListsHandler:
         "followings": followings_api_url
     }
 
-    link_functions = {
-        "followers": UserListsHandler.followers_func,
-        "friends": UserListsHandler.friends_func,
-        "followings": UserListsHandler.followings_func
-    }
+    def return_link_functions(self):
+        link_functions = {
+            "followers": UserListsHandler.followers_func,
+            "friends": UserListsHandler.friends_func,
+            "followings": UserListsHandler.followings_func
+        }
+
+        return link_functions
 
     def followers_func(self):
         print("Followers function called!")
