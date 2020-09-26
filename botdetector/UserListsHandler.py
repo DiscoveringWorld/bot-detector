@@ -10,8 +10,25 @@ class UserListsHandler:
         "followings": followings_api_url
     }
 
+    link_functions = {
+        "followers": UserListsHandler.followers_func,
+        "friends": UserListsHandler.friends_func,
+        "followings": UserListsHandler.followings_func
+    }
+
+    def followers_func(self):
+        print("Followers function called!")
+
+    def friends_func(self):
+        print("Friends function called!")
+
+    def followings_func(self):
+        print("Followings function called!")
+
     def __init__(self):
         pass
 
-    def handle(list_type):
-        pass
+    def handle(self, list_type):
+        
+        link = self.user_links[list_type]
+
