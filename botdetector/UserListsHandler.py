@@ -1,7 +1,6 @@
 from .ApiRequester import ApiRequester
 from .User import User
 from .BotDescription import BotDescription
-from .UserListsHandler import UserListsHandler
 
 class UserListsHandler:
 
