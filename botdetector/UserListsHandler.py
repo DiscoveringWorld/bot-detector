@@ -32,3 +32,6 @@ class UserListsHandler:
         
         link = self.user_links[list_type]
 
+        function = self.link_functions[list_type]
+        function()
+
