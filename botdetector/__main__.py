@@ -3,12 +3,15 @@ import sys
 from .ApiRequester import ApiRequester
 from .User import User
 from .BotDescription import BotDescription
+from .UserListsHandler import UserListsHandler
 
 def main():
     args = sys.argv[1:]
 
     if args[0] == 'run':
-        if args[2] == 'followers':
+        list_handler = UserListsHandler()
+
+        list_handler.handle(args[2])
 
 # user_id = args[1]
 
