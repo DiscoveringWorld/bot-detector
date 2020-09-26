@@ -8,7 +8,7 @@ def main():
     if args[0] == 'run':
         list_handler = UserListsHandler()
 
-        list_handler.handle(args[2])
+        list_handler.handle(args[2], args[1])
 
 # user_id = args[1]
 
