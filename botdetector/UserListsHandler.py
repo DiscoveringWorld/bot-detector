@@ -24,22 +24,47 @@ class UserListsHandler:
 
         return link_functions
 
-    def followers_func(self):
-        print("Followers function called!")
+    def followers_func(self, user):
+        requester = ApiRequester()
 
-    def friends_func(self):
+        url = self.followers_api_url.format(user.user_id)
+        user_list = requester.get(url, True, {'limit': 100})
+
+        number_of_bots = 0
+
+        for user in followers["data"]:
+            follower_user = User(follower["id"])
+
+            users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(follower_user.user_id)
+            user_status_info = requester.get(users_api_url, True, None)
+
+            bot_description = BotDescription()
+            bot_text = bot_description.return_description()
+
+            print("{0}: {1}".format(follower_user.username, user_status_info["status"]))
+            if ',' in user_status_info["status"]:
+                if user_status_info["status"][:user_status_info["status"].index(',')] in bot_text:
+                    number_of_bots += 1
+            elif '!' in user_status_info["status"]:
+                if user_status_info["status"][:user_status_info["status"].index('!')] in bot_text:
+                    number_of_bots += 1
+
+        return number_of_bots
+
+    def friends_func(self, user):
         print("Friends function called!")
 
-    def followings_func(self):
+    def followings_func(self, user):
         print("Followings function called!")
 
     def __init__(self):
         pass
 
-    def handle(self, list_type):
-        
-        link = self.user_links[list_type]
+    def handle(self, list_type, user_id):
+        user = User(user_id)
 
         function = self.return_link_functions()[list_type]
-        function()
+
+        bots = function(user)
+        print("{0} has {1} bots as a follower.".format(user.username, bots))
 
