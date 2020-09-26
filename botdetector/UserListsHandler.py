@@ -4,7 +4,7 @@ class UserListsHandler:
     friends_api_url = "https://friends.roblox.com/v1/users/{0}/friends"
     followings_api_url = "https://friends.roblox.com/v1/users/{0}/followings"
 
-    valid_list_types = [
+    user_links = [
         "followers",
         "friends",
         "followings"
