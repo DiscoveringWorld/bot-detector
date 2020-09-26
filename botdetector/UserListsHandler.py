@@ -12,9 +12,9 @@ class UserListsHandler:
 
     def return_link_functions(self):
         link_functions = {
-            "followers": UserListsHandler.followers_func,
-            "friends": UserListsHandler.friends_func,
-            "followings": UserListsHandler.followings_func
+            "followers": self.followers_func,
+            "friends": self.friends_func,
+            "followings": self.followings_func
         }
 
         return link_functions
@@ -35,6 +35,6 @@ class UserListsHandler:
         
         link = self.user_links[list_type]
 
-        function = self.link_functions[list_type]
+        function = self.return_link_functions()[list_type]
         function()
 
