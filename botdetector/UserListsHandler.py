@@ -102,7 +102,7 @@ class UserListsHandler:
                 if user_status_info["status"][:user_status_info["status"].index('!')] in bot_text:
                     number_of_bots += 1
 
-            return number_of_bots
+        return number_of_bots
 
     def __init__(self):
         pass
