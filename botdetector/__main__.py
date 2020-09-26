@@ -1,5 +1,7 @@
 import sys
 
+from .UserListsHandler import UserListsHandler
+
 def main():
     args = sys.argv[1:]
 
