@@ -31,7 +31,7 @@ class UserListsHandler:
 
         number_of_bots = 0
 
-        for user in followers["data"]:
+        for user in user_list["data"]:
             follower_user = User(follower["id"])
 
             users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(follower_user.user_id)
