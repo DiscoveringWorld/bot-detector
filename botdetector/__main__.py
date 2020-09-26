@@ -6,6 +6,7 @@ from .BotDescription import BotDescription
 
 followers_api_url = "https://friends.roblox.com/v1/users/{0}/followers"
 friends_api_url = "https://friends.roblox.com/v1/users/{0}/friends"
+followings_api_url = "https://friends.roblox.com/v1/users/{0}/followings"
 
 def main():
     args = sys.argv[1:]
