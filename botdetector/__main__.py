@@ -9,31 +9,32 @@ def main():
 
     if args[0] == 'run':
         if args[2] == 'followers':
-            user_id = args[1]
 
-            user = User(user_id)
-            requester = ApiRequester()
+# user_id = args[1]
 
-            url = followers_api_url.format(user.user_id)
-            user_list = requester.get(url, True, {'limit': 100})
+# user = User(user_id)
+# requester = ApiRequester()
 
-            number_of_bots = 0
+# url = followers_api_url.format(user.user_id)
+# user_list = requester.get(url, True, {'limit': 100})
 
-            for user in followers["data"]:
-                follower_user = User(follower["id"])
+# number_of_bots = 0
 
-                users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(follower_user.user_id)
-                user_status_info = requester.get(users_api_url, True, None)
+# for user in followers["data"]:
+#     follower_user = User(follower["id"])
 
-                bot_description = BotDescription()
-                bot_text = bot_description.return_description()
+#     users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(follower_user.user_id)
+#     user_status_info = requester.get(users_api_url, True, None)
 
-                print("{0}: {1}".format(follower_user.username, user_status_info["status"]))
-                if ',' in user_status_info["status"]:
-                    if user_status_info["status"][:user_status_info["status"].index(',')] in bot_text:
-                        number_of_bots += 1
-                elif '!' in user_status_info["status"]:
-                    if user_status_info["status"][:user_status_info["status"].index('!')] in bot_text:
-                        number_of_bots += 1
+#     bot_description = BotDescription()
+#     bot_text = bot_description.return_description()
 
-            print("{0} has {1} bots as a follower.".format(user.username, number_of_bots))
+#     print("{0}: {1}".format(follower_user.username, user_status_info["status"]))
+#     if ',' in user_status_info["status"]:
+#         if user_status_info["status"][:user_status_info["status"].index(',')] in bot_text:
+#             number_of_bots += 1
+#     elif '!' in user_status_info["status"]:
+#         if user_status_info["status"][:user_status_info["status"].index('!')] in bot_text:
+#             number_of_bots += 1
+
+# print("{0} has {1} bots as a follower.".format(user.username, number_of_bots))
