@@ -76,7 +76,29 @@ class UserListsHandler:
                     number_of_bots += 1
 
     def followings_func(self, user):
-        print("Followings function called!")
+        requester = ApiRequester()
+
+        url = self.followings_api_url.format(user.user_id)
+        user_list = requester.get(url, True, {'limit': 100})
+
+        number_of_bots = 0
+
+        for user in user_list["data"]:
+            other_user = User(user["id"])
+
+            users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(other_user.user_id)
+            user_status_info = requester.get(users_api_url, True, None)
+
+            bot_description = BotDescription()
+            bot_text = bot_description.return_description()
+
+            print("{0}: {1}".format(other_user.username, user_status_info["status"]))
+            if ',' in user_status_info["status"]:
+                if user_status_info["status"][:user_status_info["status"].index(',')] in bot_text:
+                    number_of_bots += 1
+            elif '!' in user_status_info["status"]:
+                if user_status_info["status"][:user_status_info["status"].index('!')] in bot_text:
+                    number_of_bots += 1
 
     def __init__(self):
         pass
