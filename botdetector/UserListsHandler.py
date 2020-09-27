@@ -125,5 +125,5 @@ class UserListsHandler:
         function = self.return_link_functions()[list_type]
 
         bots = function(user)
-        print("{0} has {1} bots as a follower.".format(user.username, bots))
+        print("{0} has {1} bots as a {2}.".format(user.username, bots, list_type[:-1]))
 
