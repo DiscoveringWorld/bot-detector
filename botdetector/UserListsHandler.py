@@ -45,7 +45,7 @@ class UserListsHandler:
             is_a_bot = False
 
             for link in bot_text:
-                if user_status_info["status"].find(link):
+                if user_status_info["status"].find(link) == True:
                     is_a_bot = True
                     return
 
@@ -76,7 +76,7 @@ class UserListsHandler:
             is_a_bot = False
 
             for link in bot_text:
-                if user_status_info["status"].find(link):
+                if user_status_info["status"].find(link) == True:
                     is_a_bot = True
                     return
 
@@ -103,11 +103,11 @@ class UserListsHandler:
             bot_text = bot_description.return_description()
 
             print("{0}: {1}".format(other_user.username, user_status_info["status"]))
-            
+
             is_a_bot = False
 
             for link in bot_text:
-                if user_status_info["status"].find(link):
+                if user_status_info["status"].find(link) == True:
                     is_a_bot = True
                     return
 
