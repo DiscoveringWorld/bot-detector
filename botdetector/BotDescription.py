@@ -6,7 +6,7 @@ class BotDescription:
             "robuxtools.me",
             "rewardbuddy.me",
             "robux.store/redeem",
-            " [ Content Deleted ]"
+            "[ Content Deleted ]"
         ]
 
     def return_description(self):
