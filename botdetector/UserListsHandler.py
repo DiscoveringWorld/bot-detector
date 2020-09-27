@@ -32,7 +32,7 @@ class UserListsHandler:
         number_of_bots = 0
 
         for user in user_list["data"]:
-            other_user = User(user["username"])
+            other_user = User(user["Username"])
 
             users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(other_user.user_id)
             user_status_info = requester.get(users_api_url, True, None)
@@ -63,7 +63,7 @@ class UserListsHandler:
         number_of_bots = 0
 
         for user in user_list["data"]:
-            other_user = User(user["username"])
+            other_user = User(user["Username"])
 
             users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(other_user.user_id)
             user_status_info = requester.get(users_api_url, True, None)
@@ -94,7 +94,7 @@ class UserListsHandler:
         number_of_bots = 0
 
         for user in user_list["data"]:
-            other_user = User(user["username"])
+            other_user = User(user["Username"])
 
             users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(other_user.user_id)
             user_status_info = requester.get(users_api_url, True, None)
