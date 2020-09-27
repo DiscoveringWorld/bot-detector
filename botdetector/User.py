@@ -4,7 +4,7 @@ class User():
 
     def __init__(self, username):
         
-        users_api_url = "https://api.roblox.com/users/get-by-username?username={0}".format(user_id)
+        users_api_url = "https://api.roblox.com/users/get-by-username?username={0}".format(username)
 
         requester = ApiRequester()
         user_info = requester.get(users_api_url, True, None)
