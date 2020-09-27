@@ -2,8 +2,9 @@ class BotDescription:
 
     def __init__(self):
         self.text = [
-            "You caught me",
-            "You found me"
+            "speedyreward.me",
+            "robuxtools.me",
+            "rewardbuddy.me"
         ]
 
     def return_description(self):
