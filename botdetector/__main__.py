@@ -6,9 +6,11 @@ def main():
     args = sys.argv[1:]
 
     if args[0] == 'run':
+        print("- Initializing.. -")
         list_handler = UserListsHandler()
-
+        print("- Running.. -")
         list_handler.handle(args[2], args[1])
+        print(" - Done! -")
 
 # user_id = args[1]
 
