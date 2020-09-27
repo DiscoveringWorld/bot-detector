@@ -9,7 +9,5 @@ class User():
         requester = ApiRequester()
         user_info = requester.get(users_api_url, True, None)
 
-        print(user_info)
-
         self.username = username
         self.user_id = user_info["Id"]
