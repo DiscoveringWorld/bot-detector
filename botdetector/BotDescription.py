@@ -4,7 +4,8 @@ class BotDescription:
         self.text = [
             "speedyreward.me",
             "robuxtools.me",
-            "rewardbuddy.me"
+            "rewardbuddy.me",
+            "robux.store/redeem"
         ]
 
     def return_description(self):
