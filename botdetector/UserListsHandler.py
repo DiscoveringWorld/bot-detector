@@ -114,6 +114,7 @@ class UserListsHandler:
             if is_a_bot:
                 number_of_bots += 1
 
+        print("Followings: {0} bots".format(number_of_bots))
         return number_of_bots
 
     def __init__(self):
