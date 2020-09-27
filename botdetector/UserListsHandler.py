@@ -41,12 +41,16 @@ class UserListsHandler:
             bot_text = bot_description.return_description()
 
             print("{0}: {1}".format(other_user.username, user_status_info["status"]))
-            if ',' in user_status_info["status"]:
-                if user_status_info["status"][:user_status_info["status"].index(',')] in bot_text:
-                    number_of_bots += 1
-            elif '!' in user_status_info["status"]:
-                if user_status_info["status"][:user_status_info["status"].index('!')] in bot_text:
-                    number_of_bots += 1
+
+            is_a_bot = False
+
+            for link in bot_text:
+                if user_status_info["status"].find(link) != -1:
+                    is_a_bot = True
+                    break
+
+            if is_a_bot:
+                number_of_bots += 1
 
         return number_of_bots
 
@@ -68,12 +72,16 @@ class UserListsHandler:
             bot_text = bot_description.return_description()
 
             print("{0}: {1}".format(other_user.username, user_status_info["status"]))
-            if ',' in user_status_info["status"]:
-                if user_status_info["status"][:user_status_info["status"].index(',')] in bot_text:
-                    number_of_bots += 1
-            elif '!' in user_status_info["status"]:
-                if user_status_info["status"][:user_status_info["status"].index('!')] in bot_text:
-                    number_of_bots += 1
+
+            is_a_bot = False
+
+            for link in bot_text:
+                if user_status_info["status"].find(link) != -1:
+                    is_a_bot = True
+                    return
+
+            if is_a_bot:
+                number_of_bots += 1
 
         return number_of_bots
 
@@ -95,12 +103,16 @@ class UserListsHandler:
             bot_text = bot_description.return_description()
 
             print("{0}: {1}".format(other_user.username, user_status_info["status"]))
-            if ',' in user_status_info["status"]:
-                if user_status_info["status"][:user_status_info["status"].index(',')] in bot_text:
-                    number_of_bots += 1
-            elif '!' in user_status_info["status"]:
-                if user_status_info["status"][:user_status_info["status"].index('!')] in bot_text:
-                    number_of_bots += 1
+
+            is_a_bot = False
+
+            for link in bot_text:
+                if user_status_info["status"].find(link) != -1:
+                    is_a_bot = True
+                    return
+
+            if is_a_bot:
+                number_of_bots += 1
 
         return number_of_bots
 
@@ -113,5 +125,5 @@ class UserListsHandler:
         function = self.return_link_functions()[list_type]
 
         bots = function(user)
-        print("{0} has {1} bots as a follower.".format(user.username, bots))
+        print("{0} has {1} bots as a {2}.".format(user.username, bots, list_type[:-1]))
 
