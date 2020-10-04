@@ -34,22 +34,7 @@ class UserListsHandler:
         for user in user_list["data"]:
             other_user = User(user["name"])
 
-            users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(other_user.user_id)
-            user_status_info = requester.get(users_api_url, True, None)
-
-            bot_description = BotDescription()
-            bot_text = bot_description.return_description()
-
-            print("{0}: {1}".format(other_user.username, user_status_info["status"]))
-
-            is_a_bot = False
-
-            for link in bot_text:
-                if user_status_info["status"].find(link) != -1:
-                    is_a_bot = True
-                    break
-
-            if is_a_bot:
+            if other_user.criteria():
                 number_of_bots += 1
 
         return number_of_bots
@@ -65,22 +50,7 @@ class UserListsHandler:
         for user in user_list["data"]:
             other_user = User(user["name"])
 
-            users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(other_user.user_id)
-            user_status_info = requester.get(users_api_url, True, None)
-
-            bot_description = BotDescription()
-            bot_text = bot_description.return_description()
-
-            print("{0}: {1}".format(other_user.username, user_status_info["status"]))
-
-            is_a_bot = False
-
-            for link in bot_text:
-                if user_status_info["status"].find(link) != -1:
-                    is_a_bot = True
-                    break
-
-            if is_a_bot:
+            if other_user.criteria():
                 number_of_bots += 1
 
         return number_of_bots
@@ -96,22 +66,7 @@ class UserListsHandler:
         for user in user_list["data"]:
             other_user = User(user["name"])
 
-            users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(other_user.user_id)
-            user_status_info = requester.get(users_api_url, True, None)
-
-            bot_description = BotDescription()
-            bot_text = bot_description.return_description()
-
-            print("{0}: {1}".format(other_user.username, user_status_info["status"]))
-
-            is_a_bot = False
-
-            for link in bot_text:
-                if user_status_info["status"].find(link) != -1:
-                    is_a_bot = True
-                    break
-
-            if is_a_bot:
+            if other_user.criteria():
                 number_of_bots += 1
 
         return number_of_bots
