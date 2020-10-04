@@ -15,7 +15,7 @@ class User():
 
     def criteria(self):
         try:
-            # requester = ApiRequester()
+            requester = ApiRequester()
 
             if 'ADMIN' in self.username:
                 return True
