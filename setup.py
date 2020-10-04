@@ -1,7 +1,7 @@
 from setuptools import setup
 setup(
     name = 'bot-detector',
-    version = '0.1.5',
+    version = '0.1.6',
     packages = ['botdetector'],
     entry_points = {
         'console_scripts': [
