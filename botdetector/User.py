@@ -13,6 +13,8 @@ class User():
         self.user_id = user_info["Id"]
 
     def criteria(self):
+        requester = ApiRequester()
+
         if 'ADMIN' in self.username:
             return True
         else:
