@@ -1,4 +1,5 @@
 from .ApiRequester import ApiRequester
+from .BotDescription import BotDescription
 
 class User():
 
