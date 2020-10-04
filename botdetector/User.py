@@ -14,20 +14,23 @@ class User():
         self.user_id = user_info["Id"]
 
     def criteria(self):
-        requester = ApiRequester()
+        try:
+            requester = ApiRequester()
 
-        if 'ADMIN' in self.username:
-            return True
-        else:
-            users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(self.user_id)
-            user_status_info = requester.get(users_api_url, True, None)
+            if 'ADMIN' in self.username:
+                return True
+            else:
+                users_api_url = "https://users.roblox.com/v1/users/{0}/status".format(self.user_id)
+                user_status_info = requester.get(users_api_url, True, None)
 
-            bot_description = BotDescription()
-            bot_text = bot_description.return_description()
+                bot_description = BotDescription()
+                bot_text = bot_description.return_description()
 
-            print("{0}: {1}".format(self.username, user_status_info["status"]))
+                print("{0}: {1}".format(self.username, user_status_info["status"]))
 
-            for link in bot_text:
-                if user_status_info["status"].find(link) != -1:
-                    is_a_bot = True
-                    break
+                for link in bot_text:
+                    if user_status_info["status"].find(link) != -1:
+                        is_a_bot = True
+                        break
+        except NameError as e:
+            print(str(e))
