@@ -75,11 +75,6 @@ class UserListsHandler:
 
             is_a_bot = False
 
-            for link in bot_text:
-                if user_status_info["status"].find(link) != -1:
-                    is_a_bot = True
-                    break
-
             if is_a_bot:
                 number_of_bots += 1
 
