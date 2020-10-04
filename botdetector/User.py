@@ -11,3 +11,6 @@ class User():
 
         self.username = username
         self.user_id = user_info["Id"]
+
+    def criteria():
+        pass
