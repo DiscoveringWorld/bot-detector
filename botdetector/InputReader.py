@@ -9,7 +9,7 @@ class InputReader:
         """
         docstring
         """
-        def check_for_user(self):
+        def check_for_user():
                 """
                 docstring
                 """
