@@ -30,7 +30,7 @@ class User():
 
                 for link in bot_text:
                     if user_status_info["status"].find(link) != -1:
-                        is_a_bot = True
+                        return True
                         break
         except NameError as e:
             print(str(e))
