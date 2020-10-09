@@ -13,10 +13,8 @@ def main():
         if len(args) > 0 and args[0]:
             user_lists_handler = UserListsHandler()
             input_reader = InputReader()
-
-            success = input_reader.read_args(args[0], args[1:])
             
-            if success == False:
+            if input_reader.read_args(args[0], args[1:]) == False:
                 return
 
             time.sleep(2.5)
