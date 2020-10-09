@@ -8,7 +8,7 @@ def main():
     try:
         args = sys.argv[1:]
 
-        if args[0]:
+        if len(args) > 0 and args[0]:
             print("- Initializing.. -")
 
             user_lists_handler = UserListsHandler()
