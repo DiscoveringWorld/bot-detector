@@ -14,10 +14,12 @@ def main():
             user_lists_handler = UserListsHandler()
             input_reader = InputReader()
 
-            success = input_reader.read_args(args[0], args[1:])
+            args_length_success = input_reader.read_args(args[0], args[1:])
             
-            if success == False:
+            if args_length_success == False:
                 return
+
+            
 
             time.sleep(2.5)
 
