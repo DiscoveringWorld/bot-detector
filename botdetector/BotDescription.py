@@ -7,6 +7,7 @@ class BotDescription:
             "rewardbuddy.me",
             "robux.store/redeem",
             "robloxgift.me/redeem",
+            "roblox.sc/redeem",
             "[ Content Deleted ]"
         ]
 
