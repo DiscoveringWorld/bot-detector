@@ -74,8 +74,8 @@ class UserListsHandler:
     def __init__(self):
         pass
 
-    def handle(self, list_type, user_id):
-        user = User(user_id)
+    def handle(self, list_type, username):
+        user = User(username)
 
         function = self.return_link_functions()[list_type]
 

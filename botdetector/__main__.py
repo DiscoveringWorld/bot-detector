@@ -2,19 +2,31 @@ import sys
 import time
 
 from .UserListsHandler import UserListsHandler
+from .InputReader import InputReader
 
 def main():
     try:
+        print("- Initializing.. -")
+
         args = sys.argv[1:]
 
-        if args[0] == 'run':
-            print("- Initializing.. -")
+        if len(args) > 0 and args[0]:
+            user_lists_handler = UserListsHandler()
+            input_reader = InputReader()
+            
+            if input_reader.read_args(args[0], args[1:]) == False:
+                return
+
             time.sleep(2.5)
-            list_handler = UserListsHandler()
+
             print("- Running.. -")
+            
+            user_lists_handler.handle(args[2], args[1])
+            
             time.sleep(2.5)
-            list_handler.handle(args[2], args[1])
-            time.sleep(2.5)
-            print(" - Done! -")
+            
+            print("- Done! -")
+            return
+        print("No values inputed!")
     except KeyboardInterrupt as e:
         pass
