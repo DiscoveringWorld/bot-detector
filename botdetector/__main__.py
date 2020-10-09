@@ -16,6 +16,7 @@ def main():
             print("- Running.. -")
             time.sleep(2.5)
             # list_handler.handle(args[2], args[1])
+            input_reader.read_args(args[0], args[1:])
             time.sleep(2.5)
             print(" - Done! -")
     except KeyboardInterrupt as e:
