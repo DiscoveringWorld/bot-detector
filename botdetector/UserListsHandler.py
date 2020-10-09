@@ -14,6 +14,33 @@ class UserListsHandler:
         "followings": followings_api_url
     }
 
+    command_functions = {
+
+    }
+
+    def return_command_functions(self):
+        command_functions = {
+            "run": self.run_function,
+            "list": self.list_function
+        }
+
+        return command_functions
+
+    def run_function(self, args):
+        user = User(args[1])
+
+        link_function = self.return_link_functions()[args[2]]
+
+        bots = link_function(user)
+
+        print("{0} has {1} bots as a {2}.".format(user.username, bots, args[2][:-1]))
+
+    def list_function(self):
+        print("""
+            run: command type
+            list: command type
+        """)     
+
     def return_link_functions(self):
         link_functions = {
             "followers": self.followers_func,
@@ -74,11 +101,10 @@ class UserListsHandler:
     def __init__(self):
         pass
 
-    def handle(self, list_type, username):
-        user = User(username)
+    def handle(self, args):
+        command_type = args[0]
 
-        function = self.return_link_functions()[list_type]
+        self.return_command_functions()[command_type](args)
 
-        bots = function(user)
-        print("{0} has {1} bots as a {2}.".format(user.username, bots, list_type[:-1]))
+        
 

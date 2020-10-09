@@ -5,7 +5,7 @@ class InputReader:
     def __init__(self):
         pass
 
-    def read_args(self, command_type: str, args: list):
+    def read_args(self, command_type: str, args):
         """
         docstring
         """
@@ -30,9 +30,10 @@ class InputReader:
             "run": check_for_user
         }
 
-        if len(args) < minimum_lengths[command_type]:
-            print("Not enough arguments!")
-            return False
+       if type(args) != None:
+           if len(args) < minimum_lengths[command_type]:
+                print("Not enough arguments!")
+                return False
 
         if check_functions[command_type]() == False:
             return False
