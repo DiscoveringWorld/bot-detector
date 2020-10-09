@@ -27,6 +27,6 @@ def main():
             
             time.sleep(2.5)
             
-            print(" - Done! -")
+            print("- Done! -")
     except KeyboardInterrupt as e:
         pass
