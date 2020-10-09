@@ -1,3 +1,5 @@
+from .User import User
+
 class InputReader:
 
     def __init__(self):
@@ -7,11 +9,33 @@ class InputReader:
         """
         docstring
         """
-        
+        def check_for_user(self):
+                """
+                docstring
+                """
+                
+                username = args[0]
+
+                try:
+                    user = User(username)
+                except KeyError as exception:
+                    print("Invalid username!")
+                    return False
+
         minimum_lengths = {
             "run": 2
+        }
+
+        check_functions = {
+            "run": check_for_user
         }
 
         if len(args) < minimum_lengths[command_type]:
             print("Not enough arguments!")
             return False
+
+        check_functions[command_type]()
+
+        
+
+        
