@@ -34,7 +34,8 @@ class InputReader:
             print("Not enough arguments!")
             return False
 
-        check_functions[command_type]()
+        if check_functions[command_type]() == False:
+            return False
 
         
 
