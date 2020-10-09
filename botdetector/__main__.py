@@ -6,11 +6,11 @@ from .InputReader import InputReader
 
 def main():
     try:
+        print("- Initializing.. -")
+
         args = sys.argv[1:]
 
         if len(args) > 0 and args[0]:
-            print("- Initializing.. -")
-
             user_lists_handler = UserListsHandler()
             input_reader = InputReader()
 
@@ -28,5 +28,7 @@ def main():
             time.sleep(2.5)
             
             print("- Done! -")
+            return
+        print("No values inputed!")
     except KeyboardInterrupt as e:
         pass
