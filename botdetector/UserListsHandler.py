@@ -34,7 +34,7 @@ class UserListsHandler:
         for user in user_list["data"]:
             other_user = User(user["name"])
 
-            if other_user.criteria():
+            if other_user.criteria() == True:
                 number_of_bots += 1
 
         return number_of_bots
@@ -50,7 +50,7 @@ class UserListsHandler:
         for user in user_list["data"]:
             other_user = User(user["name"])
 
-            if other_user.criteria():
+            if other_user.criteria() == True:
                 number_of_bots += 1
 
         return number_of_bots
@@ -66,7 +66,7 @@ class UserListsHandler:
         for user in user_list["data"]:
             other_user = User(user["name"])
 
-            if other_user.criteria():
+            if other_user.criteria() == True:
                 number_of_bots += 1
 
         return number_of_bots
