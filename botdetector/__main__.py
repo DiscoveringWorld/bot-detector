@@ -11,13 +11,13 @@ def main():
         if args[0] == 'run':
             print("- Initializing.. -")
 
+            user_lists_handler = UserListsHandler()
+            input_reader = InputReader()
+
             success = input_reader.read_args(args[0], args[1:])
             
             if success == False:
                 return
-            
-            user_lists_handler = UserListsHandler()
-            input_reader = InputReader()
 
             time.sleep(2.5)
 
