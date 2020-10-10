@@ -36,9 +36,3 @@ class InputReader:
                 return False
             if check_functions[command_type]() == False:
                 return False
-
-        
-
-        
-
-        
