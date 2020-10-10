@@ -31,12 +31,13 @@ class InputReader:
         }
 
         if len(args) > 0:
-           if len(args) < minimum_lengths[command_type]:
+            if len(args) < minimum_lengths[command_type]:
                 print("Not enough arguments!")
                 return False
+            if check_functions[command_type]() == False:
+                return False
 
-        if check_functions[command_type]() == False:
-            return False
+        
 
         
 
