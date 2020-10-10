@@ -35,7 +35,7 @@ class UserListsHandler:
 
         print("{0} has {1} bots as a {2}.".format(user.username, bots, args[2][:-1]))
 
-    def list_function(self):
+    def list_function(self, args):
         print("""
             run: command type
             list: command type
