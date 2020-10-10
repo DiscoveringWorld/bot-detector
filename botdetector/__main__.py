@@ -21,7 +21,7 @@ def main():
 
             print("- Running.. -")
             
-            user_lists_handler.handle(args[2], args[1])
+            user_lists_handler.handle(args)
             
             time.sleep(2.5)
             
