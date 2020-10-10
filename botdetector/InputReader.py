@@ -30,6 +30,7 @@ class InputReader:
             "run": check_for_user
         }
 
+        print(type(args))
         if type(args) != None:
            if len(args) < minimum_lengths[command_type]:
                 print("Not enough arguments!")
