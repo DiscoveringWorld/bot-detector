@@ -37,8 +37,9 @@ class UserListsHandler:
 
     def list_function(self, args):
         print("""
-            run: command type
-            list: command type
+        run: Command type used to run the program.
+        list: Command type used for checking all valid command
+        types.
         """)     
 
     def return_link_functions(self):
