@@ -15,10 +15,10 @@ class InputReader:
                 """
                 
                 username = args[0]
-
-                try:
-                    user = User(username)
-                except KeyError as exception:
+                
+                user = User(username)
+                
+                if user == False:
                     print("Invalid username!")
                     return False
 
