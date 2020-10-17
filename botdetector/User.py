@@ -10,9 +10,8 @@ class User():
         requester = ApiRequester()
 
         code = requester.get(users_api_url, True, None)
-        print("Code: {0}".format(code))
 
-        if code == 'Invalid username' or code == 'User not found':
+        if code['success'] == False:
             return False
         
         user_info = requester.get(users_api_url, True, None)
