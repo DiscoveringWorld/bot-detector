@@ -12,7 +12,7 @@ class User():
         code = requester.get(users_api_url, True, None)
 
         if code['success'] == False:
-            return False
+            self.success = False
         
         user_info = requester.get(users_api_url, True, None)
 
