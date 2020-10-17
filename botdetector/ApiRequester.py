@@ -10,7 +10,7 @@ class ApiRequester:
         response = None
 
         if parameters != None:
-            response = requests.get(url, params=parameters))
+            response = requests.get(url, params=parameters)
         else:
             response = requests.get(url)
 
