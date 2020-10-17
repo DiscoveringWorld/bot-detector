@@ -11,7 +11,7 @@ class User():
 
         code = requester.get(users_api_url, False, None)
 
-        if code == 404:
+        if code == 'Invalid username' or code == 'User not found':
             return False
         
         user_info = requester.get(users_api_url, True, None)
