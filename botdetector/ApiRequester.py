@@ -7,10 +7,15 @@ class ApiRequester:
         pass
 
     def get(self, url, is_json, parameters):
-        if is_json:
-            if parameters != None:
-                return json.loads(requests.get(url, params=parameters).content)
-            else:
-                return json.loads(requests.get(url).content)
+        response = None
+
+        if parameters != None:
+            response = requests.get(url, params=parameters)
         else:
-            return requests.get(url)
+            response = requests.get(url)
+
+        if is_json == True:
+            return json.loads(response.content)
+        else:
+            return response
+        

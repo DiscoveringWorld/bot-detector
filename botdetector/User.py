@@ -8,6 +8,13 @@ class User():
         users_api_url = "https://api.roblox.com/users/get-by-username?username={0}".format(username)
 
         requester = ApiRequester()
+
+        code = requester.get(users_api_url, True, None)
+
+        if code['success'] == False:
+            self.success = False
+            return
+        
         user_info = requester.get(users_api_url, True, None)
 
         self.username = username
