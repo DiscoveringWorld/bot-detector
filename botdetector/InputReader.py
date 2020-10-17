@@ -18,7 +18,7 @@ class InputReader:
                 
                 user = User(username)
                 
-                if user == False:
+                if user.success == False:
                     print("Invalid username!")
                     return False
 
