@@ -14,10 +14,6 @@ class UserListsHandler:
         "followings": followings_api_url
     }
 
-    command_functions = {
-
-    }
-
     def return_command_functions(self):
         command_functions = {
             "run": self.run_function,
