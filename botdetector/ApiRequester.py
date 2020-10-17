@@ -13,3 +13,9 @@ class ApiRequester:
             response = requests.get(url, params=parameters).content)
         else:
             response = requests.get(url)
+
+        if is_json == True:
+            return json.loads(response)
+        else:
+            return response
+        
