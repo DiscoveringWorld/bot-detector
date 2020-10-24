@@ -11,14 +11,16 @@ class User():
 
         code = requester.get(users_api_url, True, None)
 
-        if code['success'] == False:
-            self.success = False
-            return
+        if 'success' in code:
+            if code['successs'] == False:
+                self.success = False
+                return
         
         user_info = requester.get(users_api_url, True, None)
 
         self.username = username
         self.user_id = user_info["Id"]
+        self.success = True
 
     def criteria(self):
         try:

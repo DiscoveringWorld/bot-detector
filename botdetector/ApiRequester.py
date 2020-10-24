@@ -15,7 +15,9 @@ class ApiRequester:
             response = requests.get(url)
 
         if is_json == True:
-            return json.loads(response.content)
+            response_json = json.loads(response.content)
+
+            return response_json
         else:
             return response
         
