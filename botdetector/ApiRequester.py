@@ -17,7 +17,10 @@ class ApiRequester:
         print("Error code: {0}".format(response))
 
         if is_json == True:
-            return json.loads(response.content)
+            response_json = json.loads(response.content)
+            print("Json: {0}".format(response_json))
+
+            return response_json
         else:
             return response
         
