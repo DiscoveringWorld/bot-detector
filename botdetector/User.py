@@ -20,6 +20,7 @@ class User():
 
         self.username = username
         self.user_id = user_info["Id"]
+        self.success = True
 
     def criteria(self):
         try:
