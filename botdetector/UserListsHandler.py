@@ -43,6 +43,28 @@ types.
         Used to guide the user into the program.
         """
 
+        print("""
+Welcome to BotDetector!
+
+In this program, you can check how many bots a user on ROBLOX has as a follower, a friend or as someone they're following.
+To run the program, you'll need to type a command. You enter the following to check a user:
+
+botdetector run ThePoisonFish followers
+    ^        ^       ^           ^
+  Program  Command  Target    Category
+
+The program word is for running this program. You do not need to worry about it.
+
+The command word is for the command you're gonna run. You can check the list of commands that have already been made by
+running the list command without any arguments (Leaving Target and Category empty).
+
+The target word is whom your going to check. However, it needs to be a valid user. You can check users who are banned or terminated.
+
+The category word is for which list of users you're gonna check. You can enter categories "followers", "friends", and "followings" in there.
+
+This is the end of the help section, have fun experimenting!
+        """)
+
     def return_link_functions(self):
         link_functions = {
             "followers": self.followers_func,
