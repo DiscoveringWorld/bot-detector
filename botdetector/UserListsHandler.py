@@ -17,7 +17,8 @@ class UserListsHandler:
     def return_command_functions(self):
         command_functions = {
             "run": self.run_function,
-            "list": self.list_function
+            "list": self.list_function,
+            "help": self.help_function
         }
 
         return command_functions
