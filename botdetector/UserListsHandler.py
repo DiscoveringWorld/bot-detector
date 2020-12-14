@@ -36,7 +36,12 @@ class UserListsHandler:
 run: Command type used to run the program.
 list: Command type used for checking all valid command
 types.
-        """)     
+        """)
+
+    def help_function(self, args):
+        """
+        Used to guide the user into the program.
+        """
 
     def return_link_functions(self):
         link_functions = {
