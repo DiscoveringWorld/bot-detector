@@ -3,4 +3,4 @@ Introducing, BotDetector!
 # Information
 This is a CLI written in Python.
 
-This can be used to find the number of bots that follow you, friends with or you are following.
+This tool can be used to find bot that follow you, that you are friends with or that you follow.
